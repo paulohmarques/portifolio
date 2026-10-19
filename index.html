@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paulo Marques — Full Stack Developer</title>
+
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+
+    <!-- Estilos — a ordem importa: base → layout → seções → componentes → responsivo -->
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/layout.css" />
+    <link rel="stylesheet" href="assets/css/sections/preloader.css" />
+    <link rel="stylesheet" href="assets/css/sections/hero.css" />
+    <link rel="stylesheet" href="assets/css/sections/skills.css" />
+    <link rel="stylesheet" href="assets/css/sections/experience.css" />
+    <link rel="stylesheet" href="assets/css/sections/projects.css" />
+    <link rel="stylesheet" href="assets/css/sections/marquee.css" />
+    <link rel="stylesheet" href="assets/css/sections/about.css" />
+    <link rel="stylesheet" href="assets/css/sections/contact.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+</head>
+
+<body>
+
+    <div class="cur-dot" id="curDot"></div>
+    <div class="cur-ring" id="curRing"></div>
+
+    <div id="preloader">
+        <div class="pl-corner pl-tl"></div>
+        <div class="pl-corner pl-tr"></div>
+        <div class="pl-corner pl-bl"></div>
+        <div class="pl-corner pl-br"></div>
+        <div class="pl-content">
+            <div class="pl-label">PORTFÓLIO · DESENVOLVEDOR FULL STACK</div>
+            <div class="pl-name" id="plName"></div>
+            <div class="pl-title">ANGULAR · SPRING BOOT · SÃO PAULO, SP</div>
+            <div class="pl-progress">
+                <div class="pl-bar">
+                    <div class="pl-fill" id="plFill"></div>
+                </div>
+                <div class="pl-pct" id="plPct">0%</div>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#hero">Início</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experiência</a>
+        <a href="#projects">Projetos</a>
+        <a href="#about">Sobre</a>
+        <a href="#contact">Contato</a>
+    </div>
+
+    <nav id="nav">
+        <a href="#hero" class="nav-logo">PAULO<span>.</span>DEV</a>
+        <ul class="nav-links">
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experiência</a></li>
+            <li><a href="#projects">Projetos</a></li>
+            <li><a href="#about">Sobre</a></li>
+            <li><a href="#contact">Contato</a></li>
+        </ul>
+        <a class="nav-cta" href="https://linkedin.com/in/paulohenriquemarques" target="_blank">LinkedIn</a>
+        <div class="hamburger" id="hbg"><span></span><span></span><span></span></div>
+    </nav>
+
+    <!-- ═══ HERO ═══ -->
+    <section id="hero">
+        <canvas id="heroCanvas"></canvas>
+        <div class="hero-orb"></div>
+
+        <!-- LEFT: texto + stats -->
+        <div class="hero-left">
+            <div class="hero-badge">FULL STACK DEVELOPER · SÃO PAULO, SP</div>
+            <h1 class="hero-name">
+                <span class="ln1">PAULO</span>
+                <span class="ln2">MARQUES</span>
+            </h1>
+            <div class="hero-role">ANGULAR · TYPESCRIPT · JAVA · SPRING BOOT · POSTGRESQL</div>
+            <p class="hero-desc">Desenvolvedor Full Stack focado em aplicações web escaláveis, seguras e responsivas. SPAs em Angular 18 integradas a APIs RESTful com Java 17+, Spring Boot 3, Spring Security e JWT, aplicando Clean Code e SOLID.
+            </p>
+            <div class="hero-btns">
+                <a class="btn-p" href="#projects">Ver Projetos →</a>
+                <a class="btn-s" href="#contact">Entre em Contato</a>
+            </div>
+            <div class="hero-stats">
+                <div>
+                    <div class="stat-n" data-target="25">0</div>
+                    <div class="stat-l">Tecnologias</div>
+                </div>
+                <div>
+                    <div class="stat-n" data-target="2">0</div>
+                    <div class="stat-l">Experiências</div>
+                </div>
+                <div>
+                    <div class="stat-n" data-target="2">0</div>
+                    <div class="stat-l">Formações</div>
+                </div>
+                <div>
+                    <div class="stat-n" data-target="2">0</div>
+                    <div class="stat-l">Certificações</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT: foto + terminal -->
+        <div class="hero-right">
+            <!-- Foto -->
+            <div class="photo-card">
+                <div class="photo-frame" id="photoFrame">
+                    <div class="scanner-line"></div>
+                    <div class="photo-corner-bl"></div>
+
+                    <img class="photo-img" src="assets/img/paulo.png" alt="Paulo Marques" style="object-position:center 20%" />
+
+                    <div class="photo-badge pb-top"><span class="pb-dot"></span>Disponível para projetos<span class="pb-line">Open to work</span></div>
+                    <div class="photo-badge pb-bottom">São Paulo, SP<span class="pb-line">Brazil · Remote OK</span>
+                    </div>
+                </div>
+
+                <div class="photo-chips">
+                    <a class="chip" href="https://linkedin.com/in/paulohenriquemarques" target="_blank">
+                        <span class="chip-ico">↗</span>
+                        <div><span class="chip-label">LinkedIn</span><span class="chip-val">paulohenriquemarques</span>
+                        </div>
+                    </a>
+                    <a class="chip" href="mailto:paulinho8934@gmail.com">
+                        <span class="chip-ico">@</span>
+                        <div><span class="chip-label">Email</span><span class="chip-val">paulinho8934</span>
+                        </div>
+                    </a>
+                    <a class="chip" href="https://wa.me/5511985971063" target="_blank">
+                        <span class="chip-ico">☏</span>
+                        <div><span class="chip-label">WhatsApp</span><span class="chip-val">(11) 98597-1063</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Terminal animado -->
+            <div class="terminal" id="heroTerminal" style="margin-top:24px;width:100%;max-width:clamp(300px,38vw,460px)">
+                <div class="terminal-bar">
+                    <div class="t-dot t-dot-r"></div>
+                    <div class="t-dot t-dot-y"></div>
+                    <div class="t-dot t-dot-g"></div>
+                    <div class="t-title">paulo@dev:~</div>
+                </div>
+                <div class="terminal-body" id="termBody"></div>
+            </div>
+        </div>
+
+        <div class="scroll-hint">
+            <span>scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- ═══ SKILLS ═══ -->
+    <section id="skills">
+        <div class="sec-head reveal">
+            <span class="sec-label">// HABILIDADES TÉCNICAS</span>
+            <h2 class="sec-title">Stack e Competências</h2>
+            <p class="sec-sub">Back-end Java/Spring, front-end Angular, banco de dados relacional, containers e boas práticas de engenharia de software.</p>
+        </div>
+        <div class="skills-grid">
+            <div class="sk-card">
+                <div class="sk-ico">⚙️</div>
+                <h3>Back-End</h3>
+                <p>APIs RESTful em arquitetura em camadas, com autenticação JWT, Spring Security e tratamento global de exceções.</p>
+                <div class="sk-tags">
+                    <span class="sk-tag">Java 17+</span><span class="sk-tag">Spring Boot 3</span><span class="sk-tag">Spring Security</span><span class="sk-tag">Spring Data JPA</span><span class="sk-tag">Hibernate</span><span class="sk-tag">Node.js</span><span class="sk-tag">PHP</span><span class="sk-tag">JWT</span><span class="sk-tag">MVC</span>
+                </div>
+            </div>
+            <div class="sk-card">
+                <div class="sk-ico">🖥️</div>
+                <h3>Front-End</h3>
+                <p>SPAs e dashboards responsivos integrados a APIs REST, com proteção de rotas e interceptadores HTTP.</p>
+                <div class="sk-tags">
+                    <span class="sk-tag">Angular 18</span><span class="sk-tag">TypeScript</span><span class="sk-tag">JavaScript</span><span class="sk-tag">React.js</span><span class="sk-tag">HTML5</span><span class="sk-tag">CSS3</span><span class="sk-tag">Angular Material</span><span class="sk-tag">Tailwind CSS</span><span class="sk-tag">Chart.js</span><span class="sk-tag">GSAP</span>
+                </div>
+            </div>
+            <div class="sk-card">
+                <div class="sk-ico">🗄️</div>
+                <h3>Banco de Dados</h3>
+                <p>Modelagem relacional e versionamento de schema com migrations.</p>
+                <div class="sk-tags">
+                    <span class="sk-tag">PostgreSQL</span><span class="sk-tag">MySQL</span><span class="sk-tag">Flyway</span>
+                </div>
+            </div>
+            <div class="sk-card">
+                <div class="sk-ico">☁️</div>
+                <h3>Cloud & DevOps</h3>
+                <p>Padronização de ambiente com containers e versionamento de código.</p>
+                <div class="sk-tags">
+                    <span class="sk-tag">Docker</span><span class="sk-tag">Docker Compose</span><span class="sk-tag">Git</span><span class="sk-tag">GitHub</span>
+                </div>
+            </div>
+            <div class="sk-card">
+                <div class="sk-ico">🤖</div>
+                <h3>IA / Agentes Autônomos</h3>
+                <p>Certificação FIAP em Agentic AI, voltada à integração de agentes de IA com LLMs.</p>
+                <div class="sk-tags">
+                    <span class="sk-tag">LangGraph</span><span class="sk-tag">PydanticAI</span><span class="sk-tag">CrewAI</span><span class="sk-tag">OpenAI Agents SDK</span>
+                </div>
+            </div>
+            <div class="sk-card">
+                <div class="sk-ico">📐</div>
+                <h3>Práticas</h3>
+                <p>Clean Code, SOLID, arquitetura em camadas e engenharia de requisitos em times ágeis.</p>
+                <div class="sk-tags">
+                    <span class="sk-tag">Clean Code</span><span class="sk-tag">SOLID</span><span class="sk-tag">Arquitetura em Camadas</span><span class="sk-tag">Scrum</span><span class="sk-tag">Kanban</span><span class="sk-tag">Eng. de Requisitos</span><span class="sk-tag">UML</span>
+                </div>
+            </div>
+            <div class="sk-card">
+                <div class="sk-ico">♿</div>
+                <h3>Acessibilidade</h3>
+                <p>Interfaces acessíveis e responsivas, seguindo as diretrizes WCAG 2.1 e com suporte a VLibras.</p>
+                <div class="sk-tags">
+                    <span class="sk-tag">WCAG 2.1</span><span class="sk-tag">VLibras</span><span class="sk-tag">Responsividade</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ EXPERIÊNCIA ═══ -->
+    <section id="experience">
+        <div class="sec-head reveal">
+            <span class="sec-label">// TRAJETÓRIA PROFISSIONAL</span>
+            <h2 class="sec-title">Experiência</h2>
+            <p class="sec-sub">Desenvolvimento full stack e suporte técnico — sempre focado em entrega com qualidade.</p>
+        </div>
+
+        <div class="exp-grid">
+
+            <div class="exp-item">
+                <div class="exp-dot-col">
+                    <div class="exp-dot" id="dot0">FS</div>
+                </div>
+                <div class="exp-body">
+                    <div class="exp-period">SET 2026 — ATUAL</div>
+                    <div class="exp-company">FREELANCER · SÃO PAULO (REMOTO)</div>
+                    <div class="exp-role">Desenvolvedor Full Stack <span class="exp-type free">FREELANCER</span></div>
+                    <ul class="exp-list">
+                        <li>Desenvolvimento de plataforma web escalável, segura e responsiva com Angular 18, Spring Boot 3, Java 17+ e PostgreSQL, integrando SPAs a APIs REST.</li>
+                        <li>Implementação de autenticação e autorização com JWT e Spring Security, controle de permissões por papéis, proteção de rotas e interceptadores HTTP.</li>
+                        <li>Construção de APIs RESTful em arquitetura em camadas (Controller, Service, Repository) com Spring Data JPA, Hibernate, validações e tratamento global de exceções (Clean Code, SOLID).</li>
+                        <li>Modelagem de banco de dados PostgreSQL e versionamento de migrations com Flyway.</li>
+                        <li>Desenvolvimento de dashboards administrativos responsivos com Angular Material, Tailwind CSS, Chart.js e GSAP, com foco em acessibilidade (WCAG 2.1, VLibras).</li>
+                        <li>Padronização de ambiente com Docker Compose e versionamento com Git/GitHub, atuando em equipe ágil (Scrum/Kanban).</li>
+                    </ul>
+                    <div class="exp-stack"><span class="exp-tag">Angular 18</span><span class="exp-tag">TypeScript</span><span class="exp-tag">Java 17+</span><span class="exp-tag">Spring Boot 3</span><span class="exp-tag">Spring Security</span><span class="exp-tag">JPA/Hibernate</span><span class="exp-tag">JWT</span>
+                        <span class="exp-tag">PostgreSQL</span><span class="exp-tag">Flyway</span><span class="exp-tag">Docker</span><span class="exp-tag">Git</span><span class="exp-tag">WCAG 2.1</span><span class="exp-tag">Scrum/Kanban</span></div>
+                </div>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-dot-col">
+                    <div class="exp-dot" id="dot1">CH</div>
+                </div>
+                <div class="exp-body">
+                    <div class="exp-period">ABR 2026 — MAI 2026</div>
+                    <div class="exp-company">CYBER HOUSE · SÃO PAULO</div>
+                    <div class="exp-role">Suporte ao Cliente</div>
+                    <ul class="exp-list">
+                        <li>Atendimento ao cliente: orientação no uso de computadores, periféricos, internet e impressão de documentos.</li>
+                        <li>Suporte técnico básico: configuração de máquinas, solução de falhas simples de hardware e software e instalação de programas.</li>
+                        <li>Uso do Pacote Office (Word, Excel e PowerPoint) para auxiliar clientes na criação, edição e formatação de documentos.</li>
+                        <li>Digitação e produção de textos com rapidez e precisão; organização do espaço de trabalho e serviços de escaneamento, cópias e gravação de mídias digitais.</li>
+                    </ul>
+                    <div class="exp-stack"><span class="exp-tag">Suporte Técnico</span><span class="exp-tag">Atendimento ao Cliente</span><span class="exp-tag">Resolução de Problemas</span><span class="exp-tag">Pacote Office</span></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ═══ PROJETOS ═══ -->
+    <section id="projects">
+        <div class="sec-head reveal">
+            <span class="sec-label">// PORTFÓLIO</span>
+            <h2 class="sec-title">Projetos em Destaque</h2>
+            <p class="sec-sub">Sistemas construídos com foco em segurança, escalabilidade e acessibilidade.</p>
+        </div>
+        <div class="proj-filters reveal">
+            <button class="f-btn active" data-filter="all">Todos</button>
+            <button class="f-btn" data-filter="fullstack">Full Stack</button>
+            <button class="f-btn" data-filter="front">Front-End</button>
+        </div>
+        <div class="proj-grid" id="projGrid">
+
+            <div class="proj-card featured" data-cat="fullstack">
+                <div class="proj-thumb">
+                    <div class="proj-badge">DESTAQUE</div>
+                    <div class="proj-inner c-c">🔐</div>
+                    <div class="proj-scan"></div>
+                    <div class="proj-ov">
+                        <div class="proj-ov-links">
+                            <a href="#contact">SOLICITAR DEMO ↗</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="proj-body">
+                    <div class="proj-meta"><span class="proj-cat">Web App · Full Stack · Segurança</span><span class="proj-yr">2026</span></div>
+                    <h3>Plataforma Web Full Stack</h3>
+                    <p>Plataforma web escalável e responsiva: SPA em Angular 18 integrada a API RESTful em Spring Boot 3, autenticação e autorização com JWT e Spring Security, permissões por papéis, arquitetura em camadas (Controller, Service, Repository), banco PostgreSQL com migrations Flyway e ambiente padronizado em Docker Compose.</p>
+                    <div class="proj-tags">
+                        <span class="p-tag accent">Angular 18</span><span class="p-tag accent">Spring Boot 3</span><span class="p-tag accent">Java 17+</span><span class="p-tag">Spring Security</span><span class="p-tag">JWT</span><span class="p-tag">PostgreSQL</span><span class="p-tag">Flyway</span><span class="p-tag">Docker</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="proj-card" data-cat="front">
+                <div class="proj-thumb">
+                    <div class="proj-inner c-p">📊</div>
+                    <div class="proj-scan"></div>
+                    <div class="proj-ov"><a href="#contact">SOLICITAR DEMO ↗</a></div>
+                </div>
+                <div class="proj-body">
+                    <div class="proj-meta"><span class="proj-cat">Front-End · Dashboard</span><span class="proj-yr">2026</span></div>
+                    <h3>Dashboard Administrativo</h3>
+                    <p>Painel administrativo responsivo com gráficos em Chart.js, componentes Angular Material, estilização com Tailwind CSS e animações GSAP, com foco em acessibilidade (WCAG 2.1, VLibras).</p>
+                    <div class="proj-tags"><span class="p-tag">Angular</span><span class="p-tag">TypeScript</span><span class="p-tag">Angular Material</span><span class="p-tag">Tailwind CSS</span><span class="p-tag">Chart.js</span><span class="p-tag">GSAP</span><span class="p-tag">WCAG 2.1</span></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ═══ STACK MARQUEE ═══ -->
+    <section id="stack">
+        <div class="stack-head reveal">
+            <span class="sec-label">// TECNOLOGIAS</span>
+            <h2 class="sec-title">Stack Completa</h2>
+        </div>
+        <div class="stack-marquee">
+            <div class="stack-track">
+                <div class="s-item">
+                    <div class="s-dot"></div><span>Angular</span>
+                </div>
+                <div class="s-item">
+                    <div class="s-dot" style="background:var(--purple);box-shadow:0 0 6px var(--purple)"></div>
+                    <span>TypeScript</span>
+                </div>
+                <div class="s-item">
+                    <div class="s-dot" style="background:var(--pink);box-shadow:0 0 6px var(--pink)"></div>
+                    <span>Java</span>
+                </div>
+                <div class="s-item">
+                    <div class="s-dot" style="background:var(--green);box-shadow:0 0 6px var(--green)"></div>
+                    <span>Spring Boot</span>
+                </div>
+                <div class="s-item">
+                    <div class="s-dot"></div><span>Spring Security</span>
+                </div>
+                <div class="s-item">
+                    <div class="s-dot" style="background:var(--purple);box-shadow:0 0 6px var(--purple)"></div>
+                    <span>Hibernate</span>
+                </div>
+                <div class="s-item">
+                    <div class="s-dot" style="background:var(--pink);box-shadow:0 0 6px var(--pink)"></div>
+                    <span>PostgreSQL</span>
+                </div>
+                <div class="s-item">
+                    <div class="s-dot"></div><span>MySQL</span>
+                </div>
+                <div class="s-item">
+                    <div class="s-dot" style="background:var(--amber);box-shadow:0 0 6px var(--amber)"></div>
+                    <span>Flyway</span>
+                </div>
+                <div class="s-item">
+                    <div class="s-dot" style="background:var(--green);box-shadow:0 0 6px var(--green)"></div>
+                    <span>JWT</span>
+                </div>
+                <div class="s-item">
+                    <div class="s-dot" style="background:var(--amber);box-shadow:0 0 6px var(--amber)"></div>
+                    <span>Docker</span>
+                </div>
+                <div class="s-item">
+                    <div class="s-dot" style="background:var(--purple);box-shadow:0 0 6px var(--purple)"></div>
+                    <span>React</span>
+                </div>
+                <div class="s-item">
+                    <div class="s-dot"></div><span>Node.js</span>
+                </div>
+                <div class="s-item">
+                    <div class="s-dot" style="background:var(--pink);box-shadow:0 0 6px var(--pink)"></div>
+                    <span>PHP</span>
+                </div>
+                <div class="s-item">
+                    <div class="s-dot" style="background:var(--green);box-shadow:0 0 6px var(--green)"></div>
+                    <span>Angular Material</span>
+                </div>
+                <div class="s-item">
+                    <div class="s-dot"></div><span>Tailwind CSS</span>
+                </div>
+                <div class="s-item">
+                    <div class="s-dot" style="background:var(--purple);box-shadow:0 0 6px var(--purple)"></div>
+                    <span>Chart.js</span>
+                </div>
+                <div class="s-item">
+                    <div class="s-dot" style="background:var(--pink);box-shadow:0 0 6px var(--pink)"></div>
+                    <span>GSAP</span>
+                </div>
+                <div class="s-item">
+                    <div class="s-dot" style="background:var(--amber);box-shadow:0 0 6px var(--amber)"></div>
+                    <span>Git</span>
+                </div>
+                <div class="s-item">
+                    <div class="s-dot" style="background:var(--green);box-shadow:0 0 6px var(--green)"></div>
+                    <span>LangGraph</span>
+                </div>
+                <!-- duplicate -->
+                <div class="s-item">
+                    <div class="s-dot"></div><span>Angular</span>
+                </div>
+                <div class="s-item">
+                    <div class="s-dot" style="background:var(--purple);box-shadow:0 0 6px var(--purple)"></div>
+                    <span>TypeScript</span>
+                </div>
+                <div class="s-item">
+                    <div class="s-dot" style="background:var(--pink);box-shadow:0 0 6px var(--pink)"></div>
+                    <span>Java</span>
+                </div>
+                <div class="s-item">
+                    <div class="s-dot" style="background:var(--green);box-shadow:0 0 6px var(--green)"></div>
+                    <span>Spring Boot</span>
+                </div>
+                <div class="s-item">
+                    <div class="s-dot"></div><span>Spring Security</span>
+                </div>
+                <div class="s-item">
+                    <div class="s-dot" style="background:var(--purple);box-shadow:0 0 6px var(--purple)"></div>
+                    <span>Hibernate</span>
+                </div>
+                <div class="s-item">
+                    <div class="s-dot" style="background:var(--pink);box-shadow:0 0 6px var(--pink)"></div>
+                    <span>PostgreSQL</span>
+                </div>
+                <div class="s-item">
+                    <div class="s-dot"></div><span>MySQL</span>
+                </div>
+                <div class="s-item">
+                    <div class="s-dot" style="background:var(--amber);box-shadow:0 0 6px var(--amber)"></div>
+                    <span>Flyway</span>
+                </div>
+                <div class="s-item">
+                    <div class="s-dot" style="background:var(--green);box-shadow:0 0 6px var(--green)"></div>
+                    <span>JWT</span>
+                </div>
+                <div class="s-item">
+                    <div class="s-dot" style="background:var(--amber);box-shadow:0 0 6px var(--amber)"></div>
+                    <span>Docker</span>
+                </div>
+                <div class="s-item">
+                    <div class="s-dot" style="background:var(--purple);box-shadow:0 0 6px var(--purple)"></div>
+                    <span>React</span>
+                </div>
+                <div class="s-item">
+                    <div class="s-dot"></div><span>Node.js</span>
+                </div>
+                <div class="s-item">
+                    <div class="s-dot" style="background:var(--pink);box-shadow:0 0 6px var(--pink)"></div>
+                    <span>PHP</span>
+                </div>
+                <div class="s-item">
+                    <div class="s-dot" style="background:var(--green);box-shadow:0 0 6px var(--green)"></div>
+                    <span>Angular Material</span>
+                </div>
+                <div class="s-item">
+                    <div class="s-dot"></div><span>Tailwind CSS</span>
+                </div>
+                <div class="s-item">
+                    <div class="s-dot" style="background:var(--purple);box-shadow:0 0 6px var(--purple)"></div>
+                    <span>Chart.js</span>
+                </div>
+                <div class="s-item">
+                    <div class="s-dot" style="background:var(--pink);box-shadow:0 0 6px var(--pink)"></div>
+                    <span>GSAP</span>
+                </div>
+                <div class="s-item">
+                    <div class="s-dot" style="background:var(--amber);box-shadow:0 0 6px var(--amber)"></div>
+                    <span>Git</span>
+                </div>
+                <div class="s-item">
+                    <div class="s-dot" style="background:var(--green);box-shadow:0 0 6px var(--green)"></div>
+                    <span>LangGraph</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ ABOUT ═══ -->
+    <section id="about">
+        <div class="about-wrap">
+            <div class="about-code-block reveal">
+                <div class="acb-bar">
+                    <div class="t-dot t-dot-r" style="width:9px;height:9px"></div>
+                    <div class="t-dot t-dot-y" style="width:9px;height:9px"></div>
+                    <div class="t-dot t-dot-g" style="width:9px;height:9px"></div>
+                    <div class="acb-name">paulo.profile.ts</div>
+                </div>
+                <div class="acb-body">
+                    <span class="kw">interface</span> <span class="fn">Developer</span> {<br> &nbsp;&nbsp;name: <span class="str">"Paulo Marques"</span>;<br> &nbsp;&nbsp;role: <span class="str">"Full Stack Developer"</span>;<br> &nbsp;&nbsp;location:
+                    <span class="str">"São Paulo, SP"</span>;<br> &nbsp;&nbsp;education: <span class="str">"Senac São Paulo"</span>;<br> &nbsp;&nbsp;backend:
+                    [<span class="str">"Java"</span>, <span class="str">"Spring Boot"</span>, <span class="str">"Node.js"</span>, <span class="str">"PHP"</span>];<br> &nbsp;&nbsp;frontend: [<span class="str">"Angular"</span>, <span class="str">"TypeScript"</span>,
+                    <span class="str">"React"</span>];<br> &nbsp;&nbsp;database: [<span class="str">"PostgreSQL"</span>, <span class="str">"MySQL"</span>];<br> &nbsp;&nbsp;devops: [<span class="str">"Docker"</span>, <span class="str">"Git"</span>];<br>                    &nbsp;&nbsp;a11y: [<span class="str">"WCAG 2.1"</span>, <span class="str">"VLibras"</span>];<br> &nbsp;&nbsp;openToWork: <span class="kw">true</span>;<br> }
+                    <br><br>
+                    <span class="kw">const</span> <span class="fn">status</span> = <span class="str">"Available"</span>;
+                    <span class="t-cursor"></span>
+                </div>
+            </div>
+
+            <div class="about-right reveal">
+                <span class="sec-label">// SOBRE MIM</span>
+                <h2 class="sec-title">Quem sou</h2>
+                <p>Desenvolvedor Full Stack com foco em aplicações web escaláveis, seguras e responsivas, atuando com Angular 18, TypeScript, Java 17+, Spring Boot 3 e PostgreSQL. Desenvolvo SPAs integradas a APIs RESTful, implementando regras de negócio, autenticação e autorização com JWT e Spring Security, controle de permissões por papéis, arquitetura em camadas, validações e tratamento global de exceções, aplicando Clean Code e SOLID.</p>
+                <p>No front-end, construo interfaces e dashboards responsivos com Angular Material, Tailwind CSS, Chart.js e GSAP, com atenção à acessibilidade (WCAG 2.1, VLibras). Certificações da FIAP em Engenharia de Software e em Agentes Autônomos (LangGraph, PydanticAI, CrewAI e OpenAI Agents SDK).</p>
+
+                <div class="certs">
+                    <div class="cert">
+                        <div class="cert-ico">🎓</div><span>Téc. Computação Gráfica<small>Senac SP · Set 2025 – Fev 2027 (em andamento)</small></span>
+                    </div>
+                    <div class="cert">
+                        <div class="cert-ico">📜</div><span>Téc. Informática p/ Internet<small>Senac SP · Abr 2024 – Jun 2025</small></span>
+                    </div>
+                    <div class="cert">
+                        <div class="cert-ico">🏅</div><span>Agentes Autônomos (Agentic AI)<small>FIAP · 2026</small></span>
+                    </div>
+                    <div class="cert">
+                        <div class="cert-ico">🏅</div><span>Engenharia de Software (100h)<small>FIAP · 2026</small></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ CONTACT ═══ -->
+    <section id="contact">
+        <div class="contact-wrap">
+            <div class="contact-left reveal">
+                <span class="sec-label">// CONTATO</span>
+                <h2 class="sec-title">Vamos Trabalhar Juntos</h2>
+                <p>Aberto a oportunidades, projetos freelance e parcerias. Resposta rápida garantida.</p>
+                <div class="c-methods">
+                    <a class="c-method" href="mailto:paulinho8934@gmail.com"><span class="c-m-ico">✉️</span>
+                        <div><span class="c-m-lbl">E-mail</span><span
+                                class="c-m-val">paulinho8934@gmail.com</span></div>
+                    </a>
+                    <a class="c-method" href="tel:+5511985971063"><span class="c-m-ico">📱</span>
+                        <div><span class="c-m-lbl">Telefone / WhatsApp</span><span class="c-m-val">(11) 98597-1063</span></div>
+                    </a>
+                    <a class="c-method" href="https://linkedin.com/in/paulohenriquemarques" target="_blank"><span
+                            class="c-m-ico">💼</span>
+                        <div><span class="c-m-lbl">LinkedIn</span><span class="c-m-val">paulohenriquemarques</span></div>
+                    </a>
+                </div>
+            </div>
+            <div class="c-form reveal">
+                <div class="f-row">
+                    <div class="f-field"><label>Nome</label><input type="text" placeholder="Seu nome" /></div>
+                    <div class="f-field"><label>E-mail</label><input type="email" placeholder="seu@email.com" /></div>
+                </div>
+                <div class="f-field"><label>Assunto</label><input type="text" placeholder="Projeto, oportunidade, parceria..." /></div>
+                <div class="f-field"><label>Mensagem</label><textarea placeholder="Descreva sua proposta ou projeto..."></textarea></div>
+                <button class="f-submit" id="submitBtn" type="button">ENVIAR MENSAGEM →</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-inner">
+            <p>© 2026 Paulo Marques · Full Stack Developer · São Paulo, SP</p>
+            <div class="f-social">
+                <a class="f-sl" href="https://linkedin.com/in/paulohenriquemarques" target="_blank">IN</a>
+                <a class="f-sl" href="mailto:paulinho8934@gmail.com">@</a>
+                <a class="f-sl" href="tel:+5511985971063">WA</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ─── WHATSAPP FIXED BTN ─── -->
+    <div class="wa-wrap" id="waBtnWrap">
+        <span class="wa-ring"></span>
+        <span class="wa-ring r2"></span>
+        <span class="wa-ring r3"></span>
+        <span class="wa-dec tl"></span>
+        <span class="wa-dec br"></span>
+        <a href="https://wa.me/5511985971063" target="_blank" rel="noopener noreferrer" class="wa-btn" aria-label="Fale comigo no WhatsApp">
+            <span class="wa-dot"></span>
+            <svg class="wa-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+            </svg>
+        </a>
+        <div class="wa-tooltip">
+            <span class="wa-tooltip-label">WhatsApp</span>
+            <span class="wa-tooltip-num">(11) 98597-1063</span>
+        </div>
+    </div>
+
+
+    <!-- Bibliotecas de terceiros -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+
+    <!-- Bootstrap da aplicação (deve vir antes dos módulos) -->
+    <script src="assets/js/main.js"></script>
+
+    <!-- Módulos -->
+    <script src="assets/js/modules/preloader.js"></script>
+    <script src="assets/js/modules/cursor.js"></script>
+    <script src="assets/js/modules/nav.js"></script>
+    <script src="assets/js/modules/hero-canvas.js"></script>
+    <script src="assets/js/modules/terminal.js"></script>
+    <script src="assets/js/modules/hero-animations.js"></script>
+    <script src="assets/js/modules/reveal.js"></script>
+    <script src="assets/js/modules/counters.js"></script>
+    <script src="assets/js/modules/projects-filter.js"></script>
+    <script src="assets/js/modules/skills.js"></script>
+    <script src="assets/js/modules/contact-form.js"></script>
+    <script src="assets/js/modules/whatsapp.js"></script>
+</body>
+
+</html>
